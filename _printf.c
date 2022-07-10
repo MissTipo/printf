@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 	{
 		while (*traverse != '%')
 		{
-			putchar(*traverse);
+			_putchar(*traverse);
 			traverse++;
 		}
 
@@ -29,33 +29,34 @@ int _printf(const char *format, ...)
 
 		 switch (*traverse)
 		 {
-			  case 's': s = va_arg(ap, char*);
-				     fputs(s, stdout);
-				     break;
+			case 's': s = va_arg(ap, char*);
+					fputs(s, stdout);
+					break;
 
-			  case 'c': c = va_arg(ap, int);
-				     putchar(c);
-				     break;
+			case 'c': c = va_arg(ap, int);
+					_putchar(c);
+					break;
 
-			  case 'd': d = va_arg(ap, int);
-				     if (d < 0)
-				     {
-					     d = -d;
-					     putchar('-');
-				     }
-				     fputs(convert(d, 10), stdout);
-				     break;
+			case 'd': d = va_arg(ap, int);
+					if (d < 0)
+					{
+						d = -d;
+						_putchar('-');
+					}
+					fputs(convert(d, 10), stdout);
+					break;
 
-			  case 'i': i = va_arg(ap, int);
-				     if (i < 0)
-				     {
-					     i = -i;
-					     putchar('-');
-				     }
-				     fputs(convert(i, 10), stdout);
-				     break;
-		  }
+			case 'i': i = va_arg(ap, int);
+				  	if (i < 0)
+					{
+						i = -i;
+						_putchar('-');
+					}
+					fputs(convert(i, 10), stdout);
+					break;
+		}
 	}
+	
 	putchar('\n');
 	return (*format);
 
