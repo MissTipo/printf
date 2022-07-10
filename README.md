@@ -1,14 +1,13 @@
-<<<<<<< HEAD
-0x11. C - printf
+# Printf
 
-Description
+## Description
 
 The printf function sends formatted output to stdout, the standard output stream.
 
 _printf is a custom implementation of the C programming function printf
 The _printf() function writes the output under the control of a format string that specifies how subsequent arguments are converted for output.
 
-Format of the format string
+## Format of the format string
 
 The format string is a character string, beginning and ending in its initial shift state, if any.
 The format string is composed of zero or more directives: ordinary characters (not %), which are copied unchanged to the output stream;
@@ -20,7 +19,7 @@ The arguments must correspond properly (after type promotion) with the conversio
 By default, the arguments are used in the order given, where each '*' and each conversion specifier asks for the next argument.
 
 
-Conversion specifiers
+## Conversion specifiers
 
 Specifies the type of conversion to be applied. The conversion specifiers and their meanings are:
    . d, i: The int argument should be signed decimal notation, and the resulting number is written.
@@ -32,7 +31,7 @@ Specifies the type of conversion to be applied. The conversion specifiers and th
 
 Getting Started
 
-Requirements
+## Requirements
 
 Allowed editors: vi, vim, emacs
 All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
@@ -45,12 +44,12 @@ The prototypes of all your functions should be included in your header file call
 All your header files should be include guarded
 
 
-Compilation
+## Compilation
 
 Your code will be compiled this way: $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
 
 
-Examples
+## Examples
 
 . String
 Input: _printf("%s\n", 'This is my first collaboration');
@@ -74,7 +73,7 @@ write (man 2 write), malloc (man 3 malloc), free (man 3 free), va_start (man 3 v
 va_end (man 3 va_end), va_copy (man 3 va_copy), va_arg (man 3 va_arg)
 
 
-Mandatory Tasks
+## Mandatory Tasks
 
 0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life
 Write a function that produces output according to a format.
@@ -128,7 +127,3 @@ r : prints the reversed string
 14. The flood of print has turned reading into a process of gulping rather than savoring
 Handle the following custom conversion specifier:
 R: prints the rot13'ed string
-
-=======
-# Printf
->>>>>>> abeed2dfd398ecc99204e0b5f92c8b4c9fc9ead5
