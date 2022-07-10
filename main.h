@@ -1,5 +1,5 @@
-#ifndef _MYPRINTF_H_
-#define _MYPRINTF_H_
+#ifndef _MAIN_H_
+#define _MAIN_H_
 
 #include <unistd.h>
 #include <stdlib.h>
@@ -10,4 +10,4 @@ int _printf(const char *format, ...);
 char *convert(unsigned int num, int base);
 int _putchar(char c);
 
-#endif /* _MYPRINTF_H_ i*/
+#endif /* _MAIN_H_ i*/
