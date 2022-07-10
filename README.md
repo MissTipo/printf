@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 0x11. C - printf
 
 Description
@@ -128,3 +129,6 @@ r : prints the reversed string
 Handle the following custom conversion specifier:
 R: prints the rot13'ed string
 
+=======
+# Printf
+>>>>>>> abeed2dfd398ecc99204e0b5f92c8b4c9fc9ead5
