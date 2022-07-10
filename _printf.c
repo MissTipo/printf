@@ -1,4 +1,4 @@
-#include "myprintf.h"
+#include "main.h"
 
 /**
  * _printf - prints a variable number of arguments.
@@ -15,24 +15,29 @@ int _printf(const char *format, ...)
 	int d, i;
 
 	va_list ap;
+
 	va_start(ap, format);
-	for (traverse = format; *traverse != '\0'; traverse++ )
+	for (traverse = format; *traverse != '\0'; traverse++)
 	{
 		while (*traverse != '%')
 		{
 			putchar(*traverse);
 			traverse++;
 		}
+
 		 traverse++;
-		  switch(*traverse)
-		  {
-			  case 's' : s = va_arg(ap, char*);
+
+		 switch (*traverse)
+		 {
+			  case 's': s = va_arg(ap, char*);
 				     fputs(s, stdout);
 				     break;
-			  case 'c' : c = va_arg(ap, int);
+
+			  case 'c': c = va_arg(ap, int);
 				     putchar(c);
 				     break;
-			  case 'd' : d = va_arg(ap, int);
+
+			  case 'd': d = va_arg(ap, int);
 				     if (d < 0)
 				     {
 					     d = -d;
@@ -41,7 +46,7 @@ int _printf(const char *format, ...)
 				     fputs(convert(d, 10), stdout);
 				     break;
 
-			  case 'i' : i = va_arg(ap, int);
+			  case 'i': i = va_arg(ap, int);
 				     if (i < 0)
 				     {
 					     i = -i;
