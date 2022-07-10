@@ -9,57 +9,30 @@
 
 int _printf(const char *format, ...)
 {
-	const char *traverse;
-	char *s;
-	char c;
-	int d, i;
-
+	int printed_chars;
+	conver_t f_list[] = {
+		{"c", print_char},
+		{"s", print_string},
+		{"%", print_percent},
+		{"d", print_integer},
+		{"i", print_integer},
+		{"b", print_binary},
+		{"r", print_reversed},
+		{"R", rot13},
+		{"u", unsigned_integer},
+		{"o", print_octal},
+		{"x", print_hex},
+		{"X", print_heX},
+		{NULL, NULL}
+	};
 	va_list ap;
 
+	if (format == NULL)
+		return (-1);
+
 	va_start(ap, format);
-	for (traverse = format; *traverse != '\0'; traverse++)
-	{
-		while (*traverse != '%')
-		{
-			_putchar(*traverse);
-			traverse++;
-		}
-
-		 traverse++;
-
-		 switch (*traverse)
-		 {
-			case 's': s = va_arg(ap, char*);
-					fputs(s, stdout);
-					break;
-
-			case 'c': c = va_arg(ap, int);
-					_putchar(c);
-					break;
-
-			case 'd': d = va_arg(ap, int);
-					if (d < 0)
-					{
-						d = -d;
-						_putchar('-');
-					}
-					fputs(convert(d, 10), stdout);
-					break;
-
-			case 'i': i = va_arg(ap, int);
-				  	if (i < 0)
-					{
-						i = -i;
-						_putchar('-');
-					}
-					fputs(convert(i, 10), stdout);
-					break;
-		}
-	}
-	
-	putchar('\n');
-	return (*format);
-
+	/*Calling parser function*/
+	printed_chars = parser(format, f_list, ap);
 	va_end(ap);
+	return (printed_chars);
 }
-
