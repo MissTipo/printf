@@ -127,3 +127,11 @@ r : prints the reversed string
 14. The flood of print has turned reading into a process of gulping rather than savoring
 Handle the following custom conversion specifier:
 R: prints the rot13'ed string
+
+## Man page
+- To install the Man Page:
+```
+cp _printf_man_page /usr/local/man/man3/_printf_man_page.1
+gzip /usr/local/man/man8/_printf_man_page.1
+man _printf_man_page
+```
