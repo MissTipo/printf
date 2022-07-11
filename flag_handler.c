@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * handle_flags - Matches flags with corresponding values.
  * @flag: A pointer to a potential string of flags.
@@ -10,7 +12,7 @@ unsigned char handle_flags(const char *flag, char *index)
 {
 	int i, j;
 	unsigned char ret = 0;
-	char* flags[] = {
+	flag_t flags[] = {
 		{'+', PLUS},
 		{' ', SPACE},
 		{'#', HASH},
