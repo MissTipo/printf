@@ -43,4 +43,7 @@ void write_base(char *str);
 char *_memcpy(char *dest, char *src, unsigned int n);
 int print_unsgined_number(unsigned int);
 
+/*Flag handler*/
+unsigned char handle_flags(const char *flag, char *index);
+
 #endif /* _MAIN_H_ */
