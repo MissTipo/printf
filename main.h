@@ -31,6 +31,17 @@ struct convert
 };
 typedef struct convert conver_t;
 
+/**
+ * struct flag_s - A new type defining a flags struct.
+ * @flag: A character representing a flag.
+ * @value: The integer value of the flag.
+ */
+typedef struct flag_s
+{
+	unsigned char flag;
+	unsigned char value;
+} flag_t;
+
 /*Main functions*/
 int parser(const char *format, conver_t f_list[], va_list arg_list);
 int _printf(const char *format, ...);
