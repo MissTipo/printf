@@ -5,10 +5,20 @@
 .SH SYNOPSIS
 To use this function the #include "main.h" header is needed.
 .SH DESCRIPTION
-The _printf() function produces output according to a format which is described
-below. This function write its output to the stdout, the standard output stream.
-.SH USAGE
-To use _printf you have to use the following key characters preceeded by % symbol.
+
+The  _printf "() function produce output according to a" format " as described below. Also, write output to " stdout ", the standard output stream."
+
+.LP
+
+The _printf "() function write the output under the control of a format string that specifies how subsequent arguments (or arguments accessed via the variable-length argument facilities of " stdarg "(3) are converted for output."
+
+.SS Format of the format string
+
+The format string is a character string, beginning and ending in its  initial shift state, if any. The format string is composed of zero or more directives: ordinary characters (not %), which are copied unchanged to the output stream; and conversion specifications, each of which results in fetching zero or more subsequent arguments. Each conversion specification is introduced by the character '%' and ends with a conversion specifier.
+
+.SS Conversion specifiers
+
+A character that specifies the type of conversion to be applied. The conversion specifiers and their meaning are:
 .RS 3
 %c: To be used to print characters
 .RS 0
@@ -19,13 +29,54 @@ To use _printf you have to use the following key characters preceeded by % symbo
 %i: To print integers of max and min size of an int type
 .RS 0
 %b: To print a number in binary form
+.RS 0
+%p: To print an adddress.
+.RS 0
+%r: To reverse a string
+.RS 0
+%x: To print in lower-case hexadecimal.
+.RS 0
+%X: To print in upper-case hexadecimal.
+.RS 0
+%o: To print in octal.
+.RS 0
+%u: To print unsigned integers.
+.RS 0
+%I: To print in rot13
 .SH RETURN VALUES
 The _printf() function returns an integer representing the number of symbols
-printed not counting \\0 for the string.
+printed not counting the null ('\0') for the string.
 .SH SEE ALSO
 .I printf(3)
 .SH BUGS
 No known bugs.
+.SH EXAMPLES
+To print:
+.PP
+.RS 3
+.B #include "main.h"
+.PP
+_printf("Hello School");
+.B // the output will be 'Hello School'
+.PP
+_printf("%c", 'H');
+.B // the ouput will be 'H'
+.PP
+_printf("%s", "Hello School");
+.B // the output will be 'Hello School'
+.PP
+_printf("%!\\n");
+.B // the output will be '%!'
+.PP
+_printf("This %s amazing, isn't it!.\\n", "is");
+.B // the output will be 'This is amazing, isn't it!.'
+.PP
+_printf("%        s", "Hello");
+.B // the output will be 'Hello'
+.PP
+_printf("%        j");
+.B // the output will be '% j'
+.RE
 .SH AUTHORS
 MissTipo(https://github.com/MissTipo)
 IsaacPhiri(https://github.com/IsaacPhiri)
