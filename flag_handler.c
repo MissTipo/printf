@@ -1,43 +1,31 @@
 #include "main.h"
 
 /**
- * handle_flags - Matches flags with corresponding values.
- * @flag: A pointer to a potential string of flags.
- * @index: An index counter for the original format string.
- *
- * Return: If flag characters are matched - a corresponding value.
- *         Otherwise - 0.
+ * get_flags - Calculates active flags
+ * @format: Formatted string in which to print the arguments
+ * @i: take a parameter
+ * Return: Flags:
  */
-unsigned char handle_flags(const char *flag, char *index)
-{
-	int i, j;
-	unsigned char ret = 0;
-	flag_t flags[] = {
-		{'+', PLUS},
-		{' ', SPACE},
-		{'#', HASH},
-		{'0', ZERO},
-		{'-', NEG},
-		{0, 0}
-	};
 
-	for (i = 0; flag[i]; i++)
+int get_flags(const char *format, int *i)
+{
+	/* - + 0 # ' ' */
+	/* 1 2 4 8  16 */
+	int j, curr_i;
+	int flags = 0;
+	const char FLAGS_CH[] = {'-', '+', '0', '#', ' ', '\0'};
+	const int FLAGS_ARR[] = {F_MINUS, F_PLUS, F_ZERO, F_HASH, F_SPACE, 0};
+	for (curr_i = *i + 1; format[curr_i] != '\0'; curr_i++)
 	{
-		for (j = 0; flags[j].flag != 0; j++)
-		{
-			if (flag[i] == flags[j].flag)
+		for (j = 0; FLAGS_CH[j] != '\0'; j++)
+			if (format[curr_i] == FLAGS_CH[j])
 			{
-				(*index)++;
-				if (ret == 0)
-					ret = flags[j].value;
-				else
-					ret |= flags[j].value;
+				flags |= FLAGS_ARR[j];
 				break;
 			}
-		}
-		if (flags[j].value == 0)
+		if (FLAGS_CH[j] == 0)
 			break;
 	}
-
-	return (ret);
+	*i = curr_i - 1;
+	return (flags);
 }
