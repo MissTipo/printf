@@ -29,7 +29,7 @@ Specifies the type of conversion to be applied. The conversion specifiers and th
    . %: A '%' is written. No argument is converted. The complete conversion specification is '%%'.
 
 
-Getting Started
+## Getting Started
 
 ## Requirements
 
@@ -51,24 +51,24 @@ Your code will be compiled this way: $ gcc -Wall -Werror -Wextra -pedantic -std=
 
 ## Examples
 
-. String
+### String
 Input: _printf("%s\n", 'This is my first collaboration');
 Output: This is my first collaboration
 
-. Character
+### Character
 Input: _printf("The third vowel is  %c\n", 'C');
 Output: The third vowel is C
 
-. Integer
+### Integer
 Input: _printf("There are %i letters in the alphabet\n", 27);
 Output: There are 27 letters in the alphabet
 
-. Decimal
+### Decimal
 Input: _printf("%d\n", 1000);
 Output: 1000
 
 
-Authorized functions and macros
+## Authorized functions and macros
 write (man 2 write), malloc (man 3 malloc), free (man 3 free), va_start (man 3 va_start)
 va_end (man 3 va_end), va_copy (man 3 va_copy), va_arg (man 3 va_arg)
 
@@ -81,6 +81,8 @@ Prototype: int _printf(const char *format, ...);
 
 1. Education is when you read the fine print. Experience is what you get if you don't
 Handle conversion specifiers d, i.
+
+## Advanced Tasks
 
 2. With a face like mine, I do better in print
 Handle the following custom conversion specifiers:
