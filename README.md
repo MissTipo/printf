@@ -133,7 +133,11 @@ R: prints the rot13'ed string
 ## Man page
 - To install the Man Page:
 ```
-cp _printf_man_page /usr/local/man/man3/_printf_man_page.1
-gzip /usr/local/man/man8/_printf_man_page.1
-man _printf_man_page
+$cp _printf_man_page /usr/local/man/man3/_printf_man_page.1
+$gzip /usr/local/man/man8/_printf_man_page.1
+$man _printf_man_page
+`Usage:` $ man ./man_3_page
 ```
+
+## Authors
+[MissTipo](https://github.com/MissTipo) | [IsaacPhiri](https://github.com/IsaacPhiri)
